@@ -145,14 +145,14 @@
     </div>
        <div>
         <form name="form1" action="/action_page.php" onsubmit="return validation()" method="POST" class="bg-light"> 
-         <input type="text" placeholder="UserName" class="name" id="user"class="form-control"  pattern="[a-zA-Z0-9]+" />
+         <input type="text" placeholder="UserName" class="name" id="user"class="form-control" autocomplete="off"  pattern="[a-zA-Z0-9]+" />
          <span id="username" class="text-danger font-weight-bold"></span>
 
-         <input type="email" placeholder="Email" class="email" id="email" name='text1'/>
+         <input type="email" placeholder="Email" class="email" id="email" autocomplete="off" name='text1'/>
          <br/><span id="ename" class="text-danger font-weight-bold"style="margin-left:44%;"></span>
        </div>
        <div>
-        <input type="text" placeholder="First Name" class="name" id="first" pattern="[a-zA-Z0-9]+" />
+        <input type="text" placeholder="First Name" class="name" id="first" autocomplete="off" pattern="[a-zA-Z0-9]+" />
         <span id="fname" class="text-danger font-weight-bold"></span>
         <input type="text" placeholder="Last Name" class="name" id="last"  pattern="[a-zA-Z0-9]+" />
         <span id="lname" class="text-danger font-weight-bold"></span>
@@ -183,11 +183,11 @@
   </section><br/>
    <div class="dd">
      <div class="form-group">
-  <input type="submit" class="link_btn" class="form-control"></a>
+  <input type="submit" class="link_btn" id="submit" class="form-control"></a>
     <a href="" class="link_btn1">Cancel</a>
   </div>
   </div>
-</form>>
+</form>
 
        
   
@@ -338,6 +338,7 @@ function validation(){
   var email = document.getElementById('email').value;
   var first = document.getElementById('first').value;
   var last = document.getElementById('last').value;
+  var submit = document.getElementById('submit').value;
 
   if(user == ""){
     document.getElementById('username').innerHTML="** please filled!";
@@ -356,6 +357,12 @@ function validation(){
     document.getElementById('lname').innerHTML="** please filled !";
     return false;
   }
+
+ 
+    alert("User Add succesfully !!");
+    return true;
+
+
 }
  </script>   
 </body>
